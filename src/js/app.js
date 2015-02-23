@@ -1,7 +1,7 @@
 /**
  * Created by Adam on 2/14/2015.
  */
-var chapter2 = angular.module('chapter2', ['ngRoute', 'ui.bootstrap', 'hljs']);
+var chapter2 = angular.module('chapter2', ['ngRoute', 'ui.bootstrap', 'hljs', 'ngSanitize']);
 
 chapter2.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {

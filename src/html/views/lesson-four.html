@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-        <h1>Lesson 4</h1>
-        <h2>Getting the LED to change color based on a set amount of time, like a traffic light.</h2>
-        <h3>Objective</h3>
+        <h1>Lesson 4 - Getting the LED to change color based on a set amount of time, like a traffic light.</h1>
+        <h2>Objective</h2>
         <p>In this lesson you will learn how a traffic signal micro processor is programmed.
             You will control the amount of time the light stays yellow based on the posted speed
             limit and the accepted speed limit, that is, the speed the traffic actually moves.
@@ -12,21 +11,25 @@
             formula is stop_time=(1.467*MPH)/15+1.5. Design a traffic light that safely allows a car to
             stop in a 30 MPH zone.</p>
         <div hljs>
-import barobo
-dongle = barobo.Dongle()
-dongle.connect()
-robot = dongle.getLinkbot('9418')
+#!/usr/bin/env python3
+
+# Filename: Lesson04.py
+
+import linkbot
 import time
+
+robot = linkbot.Linkbot()
+
 mph=float(input("mph="))
 print(mph)
 yellow_time=(1.467*mph/15.0+1.5)
 print(yellow_time)
 time.sleep(3.0)
-robot.setLEDColor(0,255,0)
+robot.setLedColor(0,255,0)
 time.sleep(3)
-robot.setLEDColor(255,255,0)
+robot.setLedColor(255,255,0)
 time.sleep(yellow_time)
-robot.setLEDColor(255,0,0)
+robot.setLedColor(255,0,0)
         </div>
         <h3>Explore</h3>
         <p>Design a traffic signal that will safely allow a car to stop in a 50 MPH speed limit zone.</p>

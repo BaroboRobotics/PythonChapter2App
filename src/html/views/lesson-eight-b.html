@@ -1,27 +1,28 @@
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-        <h1>Lesson 8b</h1>
-        <h2>Linkbots alternate blinking.</h2>
-        <h3>Objective</h3>
+        <h1>Lesson 8b - Linkbots alternate blinking.</h1>
+        <h2>Objective</h2>
         <p>This example will blink the LED on the Linkbots alternately.</p>
         <div hljs>
-import barobo
+#!/usr/bin/env python3
+
+# Filename: Lesson08b.py
+
+import linkbot
 import time
-dongle = barobo.Dongle()
-dongle.connect()
-robot1 = dongle.getLinkbot('9418')#ID for first Linkbot
-robot2 = dongle.getLinkbot('6wbn')#ID for second Lnkbot
+robot1 = linkbot.Linkbot('HJBP')#ID for first Linkbot
+robot2 = linkbot.Linkbot('7ZZL')#ID for second Lnkbot
 for i in range (1,8): #does the following block 7 times
-    robot1.setLEDColor(255,0,0)#changes LED on robot1 to red
-    robot2.setLEDColor(0,0,0)#turns LED on robot2 to off
+    robot1.setLedColor(255,0,0)#changes LED on robot1 to red
+    robot2.setLedColor(0,0,0)#turns LED on robot2 to off
     time.sleep(.5) #waits half a second
-    robot1.setLEDColor(0,0,0) #turns LED on robot1 off
-    robot2.setLEDColor(255,0,0)#turns LED on robot2 red
+    robot1.setLedColor(0,0,0) #turns LED on robot1 off
+    robot2.setLedColor(255,0,0)#turns LED on robot2 red
     time.sleep(.5)# waits half a second
-robot1.setLEDColor(0,0,255) #turns LED to blue
-robot2.setLEDColor(0,0,255) #turns LED to blue
+robot1.setLedColor(0,0,255) #turns LED to blue
+robot2.setLedColor(0,0,255) #turns LED to blue
         </div>
-        <h3>Explore</h3>
+        <h2>Explore</h2>
         <p>Change the rate at which they alternate so they alternate twice as quickly, and the number
             of times they alternate to 20. How fast can they blink before they appear to be on constantly?
             How do we explain what is happening?</p>
