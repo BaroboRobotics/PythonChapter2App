@@ -51,7 +51,7 @@ chapter2.controller('lessonOneController', ['$scope', '$timeout', '$interval', '
         $scope.m.robot = robotFactory.getRobot1();
         if ($scope.m.robot !== null) {
             stopAcquisition();
-            $scope.m.robotId = $scope.m.robotId;
+            $scope.m.robotId = $scope.m.robot.id;
         }
     }
     $scope.m = {
@@ -78,18 +78,18 @@ chapter2.controller('lessonOneController', ['$scope', '$timeout', '$interval', '
             return;
         }
         var freq, sleep1, sleep2, led1, led2, led3;
-        freq = $scope.m.buzzerFrequency;
-        sleep1 = $scope.m.sleep1;
-        sleep2= $scope.m.sleep2;
-        led1 = $scope.m.led1;
-        led2 = $scope.m.led2;
-        led3 = $scope.m.led3;
+        freq = parseFloat($scope.m.buzzerFrequency);
+        sleep1 = parseFloat($scope.m.sleep1) * 1000;
+        sleep2= parseFloat($scope.m.sleep2) * 1000;
+        led1 = parseFloat($scope.m.led1);
+        led2 = parseFloat($scope.m.led2);
+        led3 = parseFloat($scope.m.led3);
         $scope.m.running = true;
-        robot.buzzerFrequency(freq);
+        $scope.m.robot.buzzerFrequency(freq);
         $timeout(function() {
-            robot.buzzerFrequency(0);
+            $scope.m.robot.buzzerFrequency(0);
             $timeout(function() {
-                robot.color(led1, led2, led3);
+                $scope.m.robot.color(led1, led2, led3);
                 $scope.m.running = false;
             }, sleep2);
         }, sleep1);
