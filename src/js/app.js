@@ -22,18 +22,15 @@ chapter2.config(['$routeProvider', function($routeProvider) {
     }).when('/lesson-six', {
         controller: 'lessonSixController',
         templateUrl: 'views/lesson-six.html'
-    }).when('/lesson-seven', {
-        controller: 'lessonSevenController',
-        templateUrl: 'views/lesson-seven.html'
-    }).when('/lesson-eight-a', {
-        controller: 'lessonEightAController',
-        templateUrl: 'views/lesson-eight-a.html'
-    }).when('/lesson-eight-b', {
-        controller: 'lessonEightBController',
-        templateUrl: 'views/lesson-eight-b.html'
-    }).when('/lesson-eight-c', {
-        controller: 'lessonEightCController',
-        templateUrl: 'views/lesson-eight-c.html'
+    }).when('/lesson-seven-a', {
+        controller: 'lessonSevenAController',
+        templateUrl: 'views/lesson-seven-a.html'
+    }).when('/lesson-seven-b', {
+        controller: 'lessonSevenBController',
+        templateUrl: 'views/lesson-seven-b.html'
+    }).when('/lesson-seven-c', {
+        controller: 'lessonSevenCController',
+        templateUrl: 'views/lesson-seven-c.html'
     }).otherwise({ redirectTo: '/'});
     
 }]);

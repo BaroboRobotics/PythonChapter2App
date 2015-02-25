@@ -28,6 +28,9 @@ chapter2.directive('contenteditable', ['$sce', function($sce) {
                 }
                 if (isNaN(html)) {
                     html = parseFloat(html.replace(/[^0-9\.]+/g, ''));
+                    if (isNan(html)) {
+                        html = 0;
+                    }
                     ngModel.$setViewValue(html);
                     element.html(html);
                 } else {
