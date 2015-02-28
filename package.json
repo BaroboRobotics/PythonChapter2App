@@ -1,6 +1,6 @@
 {
   "name": "intro-to-python-chapter-2",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Introduction to Python Chapter 2",
   "main": "Gruntfile.js",
   "scripts": {
