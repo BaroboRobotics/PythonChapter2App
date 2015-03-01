@@ -26,7 +26,7 @@ robot2 = linkbot.Linkbot('<span class="hljs-string" ng-bind="m.robot2.id"></span
             </code></pre>
             <span ng-click="toggle()" class="code-snippet-tab glyphicon" ng-class="{'glyphicon-chevron-down': !m.displayAllCode, 'glyphicon-chevron-up': m.displayAllCode}"></span>
         </div>
-        <button class="btn btn-primary" ng-class="{true: 'disabled'}[m.robotId1 == '' || m.robotId2 == '' || m.running]" ng-click="run()">Run</button>
+        <button class="btn btn-primary" ng-class="{true: 'disabled'}[m.robot1 == null || m.robot2 == null || m.running]" ng-click="run()">Run</button>
         <h2>Explore</h2>
         <p>Have the Linkbots blink 10 times, alternating between green and red.</p>
         <hr />

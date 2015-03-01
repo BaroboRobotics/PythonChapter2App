@@ -1,7 +1,7 @@
 /**
  * Created by Adam on 2/22/2015.
  */
-chapter2.factory('robotFactory', [function() {
+chapter2.factory('robotFactory', ['$interval', function($interval) {
     var robot1 = null;
     var robot2 = null;
 
@@ -74,8 +74,8 @@ chapter2.factory('robotFactory', [function() {
         _cb = function() {};
         _num = 0;
         if (_intervalRef !== null) {
-            $interval.cancel(intervalRef);
-            intervalRef = null;
+            $interval.cancel(_intervalRef);
+            _intervalRef = null;
         }
     };
     
