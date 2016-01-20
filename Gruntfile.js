@@ -2,6 +2,13 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        less: {
+            normal: {
+                files: {
+                    'src/css/main.css': 'src/less/main.less'
+                }
+            }
+        },
         concat: {
             dist: {
                 src: ['src/js/app.js', 'src/js/controllers.js', 'src/js/directives.js', 'src/js/services.js'],
@@ -69,8 +76,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'copy']);
+    grunt.registerTask('default', ['jshint', 'less', 'concat', 'uglify', 'copy']);
     grunt.registerTask('testapp', ['connect', 'watch']);
 
 };
